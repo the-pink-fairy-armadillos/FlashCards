@@ -41,7 +41,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.status(200).redirect('http://localhost:5000/');
+  res.status(200).redirect('http://localhost:3000/');
 });
 
 // routers
