@@ -22,7 +22,7 @@ router.post('/cards', async (req, res, next) => {
     res.status(200).json(row);
   } catch (err) {
     next({
-      log: 'error creating card (most likely running SQL command)',
+      log: 'error creating card',
       status: 500,
       message: { err: err },
     });
