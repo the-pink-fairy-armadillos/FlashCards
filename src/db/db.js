@@ -36,7 +36,7 @@ obj.createCard = async (args) => {
       args['back'],
       Number(args['difficulty']),
       args['hints'],
-      args['scheduled'] === null ? formattedTime : args['scheduled'], // args['scheduled'] should have format 2022-12-28 12:34:56
+      args['scheduled'] === undefined ? formattedTime : args['scheduled'], // args['scheduled'] should have format 2022-12-28 12:34:56
     ];
 
     const sql = `INSERT INTO Cards

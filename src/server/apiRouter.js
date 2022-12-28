@@ -4,19 +4,18 @@ const router = express.Router();
 
 router.post('/cards', async (req, res) => {
   // sanitize post data
+  const { user_id, title, front, back, difficulty, hints, scheduled } =
+    req.body;
   const data = {
-    user_id: null,
-    title: null,
-    front: null,
-    back: null,
-    difficulty: null,
-    hints: null,
-    scheduled: null,
+    user_id,
+    title,
+    front,
+    back,
+    difficulty,
+    hints,
+    scheduled,
   };
-  for (let key in data) {
-    const value = req.body[key];
-    data[key] = value === undefined ? null : value;
-  }
+
   console.log('creating data: ', data);
   const row = await db.createCard(data);
   res.status(200).json(row);
