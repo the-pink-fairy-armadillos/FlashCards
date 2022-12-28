@@ -2,22 +2,29 @@ const pool = require('./pool.js');
 
 const obj = {};
 
-// obj.readCard = async (id) => {
-//   const sql = `SELECT *
-//   FROM Cards
-//   WHERE _id=$1;`;
-//   const data = await pool.query(sql, [id]);
-//   // TODO: validate that there is only one row
-//   console.log(data.rows[0]);
-//   return data.rows[0];
-// };
+obj.readCard = async (id) => {
+  try {
+    const sql = `SELECT *
+    FROM Cards
+    WHERE _id=$1;`;
+    const data = await pool.query(sql, [id]);
+    // TODO: validate that there is only one row
+    return data.rows[0];
+  } catch (err) {
+    throw `In db.js:obj.readCard: ${err.message}`;
+  }
+};
 
-// obj.readAllCards = async () => {
-//   const sql = `SELECT *
-//   FROM Cards;`;
-//   const data = await pool.query(sql);
-//   return data.rows;
-// };
+obj.readAllCards = async () => {
+  try {
+    const sql = `SELECT *
+    FROM Cards;`;
+    const data = await pool.query(sql);
+    return data.rows;
+  } catch (err) {
+    throw `In db.js:obj.readAllCards: ${err.message}`;
+  }
+};
 
 obj.createCard = async (args) => {
   try {
