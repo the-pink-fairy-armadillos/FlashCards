@@ -47,7 +47,7 @@ obj.createCard = async (args) => {
     const data = await pool.query(sql, arr);
     return data.rows[0];
   } catch (err) {
-    console.log('createCard', err);
+    throw err;
   }
 };
 
