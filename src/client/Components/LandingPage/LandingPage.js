@@ -5,8 +5,8 @@ import styles from './LandingPage.module.css';
 const LandingPage = () => {
   return (
     <>
-      <div className="container d-flex justify-content-center text-center ">
-        <div className="row">
+      <div className="container d-flex justify-content-center text-center vertical-center bg-warning">
+        <div className="row  align-middle">
           <div id={styles.divContainer} className="col">
             <div className={styles.width500}>
               "Learning is the key to unlocking your full potential and
