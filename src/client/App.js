@@ -23,7 +23,7 @@ const App = () => {
             <Route exact path="/" element={<Home />} />
             <Route exact path="/api/:resource/:id" element={<GetResource />} />
             <Route exact path="/createCard" element={<CreateCard />} />
-            <Route exact path="/flashcard" element={<FlashCard />} />
+            <Route exact path="/flashcard/:id" element={<FlashCard />} />
           </Routes>
         </div>
       </BrowserRouter>
