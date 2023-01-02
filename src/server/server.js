@@ -44,6 +44,10 @@ app.use(
 );
 
 app.get('/', (req, res) => {
+  res.status(200).redirect('http://localhost:3000/');
+});
+
+app.get('/library', (req, res) => {
   res.status(200).redirect('http://localhost:3000/library');
 });
 
