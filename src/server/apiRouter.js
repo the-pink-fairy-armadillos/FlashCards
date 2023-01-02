@@ -9,7 +9,14 @@ router.post('/db', async (req, res) => {
 
 router.update('/cards/:id', async (req, res, next) => {
   try {
+
     const { user_id, title, front, back, difficulty, hints, scheduled } = req.body; 
+    const data = {user_id, title, front, back, difficulty, hints, scheduled }; 
+    
+    const row = await db.updateCard(data); 
+    res.status(200).json(row); 
+    console.log('updated sucessfully') 
+    return next(); 
 
   } catch(err) {
     next({
@@ -22,8 +29,14 @@ router.update('/cards/:id', async (req, res, next) => {
 
 router.delete('/cards/:id', async (req, res, next) => {
   try {
-      // const {user_id} = req.body
-      // let query = 'DELETE FROM cards WHERE '
+
+    const _id = req.params.id; 
+    const row = await db.deleteCard(_id); 
+    if(row === undefined) throw `no card with id=${_id} was found`; 
+    res.status(200).json(row);  
+    console.log('deleted sucessfully') 
+    return next(); 
+
   } catch(err) {
     next({
       log: 'error deleting the card', 
