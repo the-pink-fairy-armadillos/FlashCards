@@ -4,7 +4,12 @@
   color: white;
   max-width: 500px;
 }
-
+.row {
+  display: flex ;
+  flex-direction: row;  
+  align-content: center;
+  justify-content: space-around;  
+}
 
 #LandingPageLogin {
   font-family: 'Fredericka the Great', cursive;
@@ -15,14 +20,18 @@
 
 #divContainer {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  /* justify-content: space-around; */
+}
+
+#divContainer div {
+  flex:1;
 }
 
 #landingImage {
-  width: 50%;
+  width: 100%;
   height: auto;
-  position: absolute;
-  left: 50px;
-  bottom: 0px;
+  /* position: absolute; */
+  /* left: 50px; */
+  /* bottom: 0px; */
 }
