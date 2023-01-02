@@ -5,18 +5,11 @@ https://www.elephantsql.com/
 
 Grab the url of your new database so you can access it from the command line in your terminal.
 
-create a table
-Example SQL:
-
-# draw er diagram
-
-https://app.sqldbm.com/PostgreSQL/Edit/p243962/
-
 # Useful SQL commands
 
 ## See tables that you created
 
-SELECT \* FROM information_schema.tables WHERE table_schema='public' AND table_name!='pg_stat_statements'
+`SELECT * FROM information_schema.tables WHERE table_schema='public' AND table_name!='pg_stat_statements'`
 
 ## Delete a table
 
@@ -36,4 +29,49 @@ CREATE TABLE Persons (
 
 ## Create card
 
-INSERT INTO cards (front, back) VALUES ('hello', 'world')
+`INSERT INTO cards (front, back) VALUES ('hello', 'world')`
+
+# Creating tables
+
+These commands will re-create tables in database
+
+```
+DROP TABLE GoogleUserInfo CASCADE;
+DROP TABLE Cards CASCADE;
+DROP TABLE Tags CASCADE;
+DROP TABLE Junctions_tag_card CASCADE;
+
+
+CREATE TABLE GoogleUserInfo
+(
+ _id            SERIAL PRIMARY KEY,
+ sub            TEXT NOT NULL,
+ picture        TEXT NULL,
+ email          TEXT NOT NULL,
+ email_verified BOOLEAN NULL
+);
+
+CREATE TABLE Cards (
+   _id SERIAL PRIMARY KEY,
+   user_id INTEGER REFERENCES GoogleUserInfo (_id) NOT NULL,
+   title TEXT NULL,
+   front TEXT NOT NULL,
+   back TEXT NOT NULL,
+   difficulty REAL NULL,
+   hints TEXT NULL,
+   scheduled TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE Tags (
+   _id SERIAL PRIMARY KEY,
+   text TEXT NULL
+);
+
+
+CREATE TABLE Junctions_tag_card (
+  tag_id INTEGER REFERENCES Tags(_id),
+  card_id INTEGER REFERENCES Cards(_id),
+  PRIMARY KEY (tag_id, card_id)
+);
+
+```

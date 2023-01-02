@@ -5,6 +5,8 @@ import GetResource from './Components/GetResource/GetResource';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
 
+// alina testing 
+
 const App = () => {
   const leftItems = {
     home: '/',
@@ -17,8 +19,8 @@ const App = () => {
         <Navbar leftItems={leftItems} />
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/api/:resource/:id" element={<GetResource />} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/api/:resource/:id' element={<GetResource />} />
           </Routes>
         </div>
       </BrowserRouter>

@@ -15,13 +15,16 @@ const PORT = 8080;
 app.use(
   session({
     secret: SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
   })
 );
+
 app.use(passport.authenticate('session'));
 
 // required for post data
 app.use(express.json());
-app.use(express.urlencoded());
+app.use(express.urlencoded({ extended: true }));
 
 // To get around CORS we normally set response header Access-Control-Allow-Origin --> '*'
 // For example:
@@ -41,7 +44,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.status(200).redirect('http://localhost:5000/');
+  res.status(200).redirect('http://localhost:3000/');
 });
 
 // routers
@@ -49,6 +52,15 @@ app.use('/api', apiRouter);
 app.use('/auth', authRouter);
 
 // global error handler
+app.use((err, req, res, next) => {
+  const defaultErr = {
+    log: 'Express error handler caught unknown middleware error',
+    status: 400,
+    message: { err: 'An error occurred' },
+  };
+  const errorObj = Object.assign({}, defaultErr, err);
+  return res.status(errorObj.status).json(errorObj);
+});
 
 // start server
 app.listen(PORT, () => {
