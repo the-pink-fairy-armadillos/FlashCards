@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import Card from './Card';
 import { v4 as uuid } from 'uuid';
 import styles from './home.module.css';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   const [arrCards, setArrCards] = useState([]);
@@ -21,7 +22,9 @@ const Home = () => {
   return (
     <>
       <div id={styles.createNewCard}>
-        Create New Card <strong>+</strong>
+        <Link to="/createCard">
+          Create New Card <strong>+</strong>
+        </Link>
       </div>
       <div id={styles.cardsContainer}>
         {arrCards.map((card) => (

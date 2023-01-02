@@ -6,6 +6,10 @@
     width: 150px;
     text-align: center;
     margin: 10px;
+}
+
+#createNewCard a {
+    color: white;
 
 }
 
