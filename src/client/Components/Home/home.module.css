@@ -1,0 +1,15 @@
+#createNewCard {
+    background-color: #8FA582;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    padding: 5px;
+    width: 150px;
+    text-align: center;
+    margin: 10px;
+
+}
+
+#cardsContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
