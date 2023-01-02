@@ -1,0 +1,9 @@
+#cardInputs {
+  border: red;
+}
+
+#cardFront {
+  width: 1000px;
+  background: white;
+  color: white;
+}
