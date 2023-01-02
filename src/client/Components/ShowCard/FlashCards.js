@@ -11,7 +11,7 @@ const FlashCard = () => {
   console.log(id); 
   const [cardData, setCardData] = useState({});
   const [nextCard, setnextCard] = useState({});
-  const [showFront, setShowFront] = useState(false);
+  const [showFront, setShowFront] = useState(true);
   const navigate = useNavigate();
 
 
@@ -39,6 +39,16 @@ const FlashCard = () => {
       setnextCard(res.data);
     });
   }, []);
+
+  const deleteCard = () => {
+    const response = axios({
+      method: 'delete',
+      withCredentials: true,
+      url: `http://localhost:8080/api/cards/${id}`,
+    }).then((res) => {
+      window.location.href=(`/library`) 
+    });
+  }
   
   return (
     <>
@@ -55,6 +65,7 @@ const FlashCard = () => {
             </p>
          </div>
 
+         <button onClick={() => deleteCard() } className={`${styles.addCardBtn}`}>DELETE CARD</button>
          <button onClick={() => window.location.href=(`/flashcard/${nextCard}`) } className={`${styles.addCardBtn}`}>NEXT CARD</button>
 
         </div>
