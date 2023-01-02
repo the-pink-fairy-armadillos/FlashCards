@@ -44,7 +44,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.status(200).redirect('http://localhost:3000/');
+  res.status(200).redirect('http://localhost:3000/library');
 });
 
 // routers
