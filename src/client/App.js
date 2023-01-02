@@ -6,6 +6,7 @@ import Home from './Components/Home/Home';
 import CreateCard from './Components/CreateCard/CreateCard';
 import Navbar from './Components/Navbar/Navbar';
 import FlashCard from './Components/ShowCard/FlashCards';
+import LandingPage from './Components/LandingPage/LandingPage';
 
 // alina testing
 
@@ -20,7 +21,8 @@ const App = () => {
         <Navbar leftItems={leftItems} />
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<LandingPage />} />
+            <Route exact path="/library" element={<Home />} />
             <Route exact path="/api/:resource/:id" element={<GetResource />} />
             <Route exact path="/createCard" element={<CreateCard />} />
             <Route exact path="/flashcard/:id" element={<FlashCard />} />
