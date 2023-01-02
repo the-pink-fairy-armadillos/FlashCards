@@ -44,7 +44,7 @@ app.use(
 );
 
 app.get('/', (req, res) => {
-  res.status(200).redirect('http://localhost:5000/');
+  res.status(200).redirect('http://localhost:3000/');
 });
 
 // routers
@@ -59,7 +59,7 @@ app.use((err, req, res, next) => {
     message: { err: 'An error occurred' },
   };
   const errorObj = Object.assign({}, defaultErr, err);
-  return res.status(errorObj.status).json(errorObj.message);
+  return res.status(errorObj.status).json(errorObj);
 });
 
 // start server
