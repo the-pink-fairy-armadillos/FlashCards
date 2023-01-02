@@ -17,7 +17,7 @@ const CreateCard = () => {
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-    }).then(() => navigate('/'));
+    }).then(() => navigate('/library'));
   }
 
   return (
