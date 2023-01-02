@@ -1,0 +1,27 @@
+p {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.2rem;
+  color: white;
+  max-width: 500px;
+}
+
+#LandingPageLogin {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 2.2rem;
+  color: white;
+  margin-top: 50px;
+}
+
+#divContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#landingImage {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  left: 50px;
+  bottom: 0px;
+}
