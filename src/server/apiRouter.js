@@ -11,7 +11,7 @@ router.update('/cards/:id', async (req, res, next) => {
   try {
 
     const { user_id, title, front, back, difficulty, hints, scheduled } = req.body; 
-    const data = {user_id, title, front, back, difficulty, hints, scheduled }; 
+    const data = { user_id, title, front, back, difficulty, hints, scheduled }; 
     
     const row = await db.updateCard(data); 
     res.status(200).json(row); 
