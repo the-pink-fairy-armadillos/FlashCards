@@ -5,6 +5,7 @@ import GetResource from './Components/GetResource/GetResource';
 import Home from './Components/Home/Home';
 import createCard from './Components/CreateCard/CreateCard';
 import Navbar from './Components/Navbar/Navbar';
+import FlashCard from './Components/Show Card/FlashCards';
 
 // alina testing
 
@@ -23,6 +24,9 @@ const App = () => {
             <Route exact path='/' element={<Home />} />
             <Route exact path='/api/:resource/:id' element={<GetResource />} />
             <Route exact path='/createCard' element={<createCard />} />
+
+            <Route exact path='/flashcard' element={<FlashCard />} />
+
           </Routes>
         </div>
       </BrowserRouter>
