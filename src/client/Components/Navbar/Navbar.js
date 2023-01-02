@@ -2,8 +2,7 @@ import axios from 'axios';
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './navbar.module.css';
-import { useSelector, useDispatch } from 'react-redux';
-import { setEmail } from '../../Redux/slices/userSlice';
+import { useSelector } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 
 const Navbar = ({ leftItems }) => {
@@ -12,21 +11,7 @@ const Navbar = ({ leftItems }) => {
   // 'user' is the name of the slice (see userSlice.js)
   // 'email' is a field in the slice
   const email = useSelector((state) => state.user.email);
-  const dispatch = useDispatch();
 
-  // On first render, get user data
-  useEffect(() => {
-    // we cannot use async/await in useEffect without wrapping in outer function
-    const response = axios({
-      method: 'get',
-      withCredentials: true,
-      url: 'http://localhost:8080/auth/user',
-    }).then((res) => {
-      if (res.data) {
-        dispatch(setEmail(res.data.email));
-      }
-    });
-  }, []);
   return (
     <>
       {email && (
