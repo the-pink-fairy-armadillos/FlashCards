@@ -69,18 +69,20 @@ const FlashCard = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => deleteCard()}
-            className={`${styles.addCardBtn}`}
-          >
-            DELETE CARD
-          </button>
-          <button
-            onClick={() => (window.location.href = `/flashcard/${nextCard}`)}
-            className={`${styles.addCardBtn}`}
-          >
-            NEXT CARD
-          </button>
+          <div className={styles.spaceBetween}>
+            <button
+              onClick={() => deleteCard()}
+              className={`${styles.addCardBtn}`}
+            >
+              DELETE CARD
+            </button>
+            <button
+              onClick={() => (window.location.href = `/flashcard/${nextCard}`)}
+              className={`${styles.addCardBtn}`}
+            >
+              NEXT CARD
+            </button>
+          </div>
         </div>
       </div>
     </>
