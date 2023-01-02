@@ -1,9 +1,10 @@
-p {
+.width500 {
   font-family: 'Fredericka the Great', cursive;
   font-size: 2.2rem;
   color: white;
   max-width: 500px;
 }
+
 
 #LandingPageLogin {
   font-family: 'Fredericka the Great', cursive;

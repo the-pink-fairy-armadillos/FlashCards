@@ -6,7 +6,7 @@ const LandingPage = () => {
   return (
     <>
       <div id={styles.divContainer}>
-        <p>
+        <p className={styles.width500}>
           "Learning is the key to unlocking your full potential and achieving
           greatness."
         </p>
