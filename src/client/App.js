@@ -3,9 +3,10 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import { Counter } from './Components/misc/Counter/Counter';
 import GetResource from './Components/GetResource/GetResource';
 import Home from './Components/Home/Home';
+import createCard from './Components/CreateCard/CreateCard';
 import Navbar from './Components/Navbar/Navbar';
 
-// alina testing 
+// alina testing
 
 const App = () => {
   const leftItems = {
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/api/:resource/:id' element={<GetResource />} />
+            <Route exact path='/createCard' element={<createCard />} />
           </Routes>
         </div>
       </BrowserRouter>
