@@ -22,7 +22,7 @@ const Home = () => {
   return (
     <>
       <div id={styles.createNewCard}>
-        <Link to="/createCard">
+        <Link to='/createCard'>
           Create New Card <strong>+</strong>
         </Link>
       </div>
