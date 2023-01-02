@@ -17,8 +17,8 @@ const App = () => {
         <Navbar leftItems={leftItems} />
         <div>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/api/:resource/:id" element={<GetResource />} />
+            <Route exact path='/' element={<Home />} />
+            <Route exact path='/api/:resource/:id' element={<GetResource />} />
           </Routes>
         </div>
       </BrowserRouter>
