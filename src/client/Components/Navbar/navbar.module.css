@@ -8,6 +8,12 @@ body {
   justify-content: space-between;
 }
 
+.row a {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 36px;
+  color: white;
+}
+
 .margin {
   padding: 10px;
 }

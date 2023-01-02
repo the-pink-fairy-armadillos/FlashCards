@@ -12,7 +12,6 @@ import FlashCard from './Components/ShowCard/FlashCards';
 const App = () => {
   const leftItems = {
     home: '/',
-    problems: '/api/cards/3',
   };
   return (
     <>

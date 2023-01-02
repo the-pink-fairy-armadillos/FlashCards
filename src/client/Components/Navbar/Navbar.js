@@ -44,7 +44,7 @@ const Navbar = ({ leftItems }) => {
         <div className={styles.row}>
           <div className={styles.margin}>
             {email ? (
-              <a href='http://localhost:8080/auth/logout'>logout {email}</a>
+              <a href="http://localhost:8080/auth/logout">logout</a>
             ) : (
               <a href={`http://localhost:8080/auth/google`}>log in</a>
             )}
