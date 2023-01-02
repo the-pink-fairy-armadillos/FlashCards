@@ -17,7 +17,8 @@ router.get(
     failureRedirect: '/auth/failure',
   }),
   (req, res) => {
-    return res.redirect('/');
+    // success
+    return res.redirect('/library');
   }
 );
 
