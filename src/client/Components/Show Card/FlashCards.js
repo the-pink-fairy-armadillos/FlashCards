@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import styles from './flashcard.module.css';
+import styles from './flashCard.module.css';
 
 const FlashCard = () => {
   return (
