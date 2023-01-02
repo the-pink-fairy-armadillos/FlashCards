@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './navbar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { setEmail } from '../../Redux/slices/userSlice';
@@ -45,7 +45,7 @@ const Navbar = ({ leftItems }) => {
           <div className={styles.row}>
             <div className={styles.margin}>
               {email ? (
-                <a href="http://localhost:8080/auth/logout">logout</a>
+                <a href='http://localhost:8080/auth/logout'>logout</a>
               ) : (
                 <a href={`http://localhost:8080/auth/google`}>log in</a>
               )}
