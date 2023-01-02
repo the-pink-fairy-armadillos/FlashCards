@@ -4,6 +4,7 @@ import { Counter } from './Components/misc/Counter/Counter';
 import GetResource from './Components/GetResource/GetResource';
 import Home from './Components/Home/Home';
 import Navbar from './Components/Navbar/Navbar';
+import FlashCard from './Components/Show Card/FlashCards';
 
 // alina testing 
 
@@ -21,6 +22,7 @@ const App = () => {
           <Routes>
             <Route exact path='/' element={<Home />} />
             <Route exact path='/api/:resource/:id' element={<GetResource />} />
+            <Route exact path='/flashcard' element={<FlashCard />} />
           </Routes>
         </div>
       </BrowserRouter>
