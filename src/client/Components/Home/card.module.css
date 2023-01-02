@@ -9,15 +9,16 @@ body {
     border-color: white;
     border-width: 2px;
     border-style: solid;
-    width:200px;
+    width:400px;
+    height: 200px;
 }
 
 .title {
-    font-size: 36px;
+    font-size: 24px;
 }
 
 .front {
-    font-size: 24px;
+    font-size: 18px;
 }
 
 
