@@ -1,9 +1,19 @@
+body {
+  background: #252525;
+}
+
 .row {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.row a {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 36px;
+  color: white;
 }
 
 .margin {
-  padding:10px;
+  padding: 10px;
 }

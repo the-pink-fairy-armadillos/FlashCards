@@ -47,6 +47,10 @@ app.get('/', (req, res) => {
   res.status(200).redirect('http://localhost:3000/');
 });
 
+app.get('/library', (req, res) => {
+  res.status(200).redirect('http://localhost:3000/library');
+});
+
 // routers
 app.use('/api', apiRouter);
 app.use('/auth', authRouter);
