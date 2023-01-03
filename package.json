@@ -6,17 +6,20 @@
     "start": "webpack serve --config ./webpack.config.js --mode development",
     "frontend": "webpack serve --config ./webpack.config.js --mode development",
     "backend": "npx nodemon src/server/server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"nodemon src/server/server.js\" \" webpack serve --config ./webpack.config.js --mode development --open --hot\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "proxy": "http://localhost:8080",
   "description": "",
   "dependencies": {
     "@babel/core": "^7.20.5",
     "@babel/node": "^7.20.5",
     "@reduxjs/toolkit": "^1.9.1",
     "axios": "^1.2.1",
+    "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "css-loader": "^6.7.3",
     "express-session": "^1.17.3",
