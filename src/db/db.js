@@ -2,6 +2,8 @@ const pool = require('./pool.js');
 
 const obj = {};
 
+
+//readCard is going to read info of a single flashcard
 obj.readCard = async (id) => {
   try {
     const sql = `SELECT *
@@ -15,6 +17,7 @@ obj.readCard = async (id) => {
   }
 };
 
+//readAllCards is going to read info of all cards in the database
 obj.readAllCards = async () => {
   try {
     const sql = `SELECT *
@@ -26,6 +29,7 @@ obj.readAllCards = async () => {
   }
 };
 
+//createCard is going to create a new flashcard with provided arguments
 obj.createCard = async (args) => {
   try {
     // this is the current time in format 2022-12-28 12:34:56
@@ -58,6 +62,8 @@ obj.createCard = async (args) => {
   }
 };
 
+
+//updateCard is to update specific flashcard info
 obj.updateCard = async (args) => {
   try {
     // console.log('checking for update'); 
@@ -94,6 +100,7 @@ obj.updateCard = async (args) => {
   }
 }
 
+//deleleCard is to delete a flashcard by its id provided
 obj.deleteCard = async (id) => {
   try {
 
