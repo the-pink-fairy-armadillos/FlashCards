@@ -2,7 +2,6 @@ const pool = require('./pool.js');
 
 const obj = {};
 
-
 //readCard is going to read info of a single flashcard
 obj.readCard = async (id) => {
   try {
@@ -61,24 +60,27 @@ obj.createCard = async (args) => {
   }
 };
 
-
 //updateCard is to update specific flashcard info
 obj.updateCard = async (args) => {
   try {
-    // console.log('checking for update'); 
-    // console.log(args); 
+    // console.log('checking for update');
+    // console.log(args);
     const selectUserSQL = ` SELECT * FROM Cards WHERE _id=$1`;
     const data1 = await pool.query(selectUserSQL, [Number(args['_id'])]);
-    console.log('data1', data1.rows[0]); 
+    console.log('data1', data1.rows[0]);
 
     const arr = [
       Number(args['_id']),
       args['title'] === undefined ? data1.rows[0].title : args['title'],
       args['front'] === undefined ? data1.rows[0].front : args['front'],
       args['back'] === undefined ? data1.rows[0].back : args['back'],
-      Number(args['difficulty']) === undefined ? data1.rows[0].difficulty : args['difficulty'],
+      Number(args['difficulty']) === undefined
+        ? data1.rows[0].difficulty
+        : args['difficulty'],
       args['hints'] === undefined ? data1.rows[0].hints : args['hints'],
-      args['scheduled'] === undefined ? data1.rows[0].scheduled : args['scheduled'],
+      args['scheduled'] === undefined
+        ? data1.rows[0].scheduled
+        : args['scheduled'],
     ];
 
     const updateUserSQL = ` UPDATE Cards
@@ -91,25 +93,21 @@ obj.updateCard = async (args) => {
     WHERE _id = $1`;
 
     const data2 = await pool.query(updateUserSQL, arr);
-
   } catch (err) {
-    throw `In db.js: obj.updateCard: ${err.message}`; 
+    throw `In db.js: obj.updateCard: ${err.message}`;
   }
-}
+};
 
 //deleleCard is to delete a flashcard by its id provided
 obj.deleteCard = async (id) => {
   try {
-
-    sql = `DELETE FROM Cards WHERE _id=$1 RETURNING *`; 
+    sql = `DELETE FROM Cards WHERE _id=$1 RETURNING *`;
     const data = await pool.query(sql, [id]);
-    return data.rows[0]; 
-
+    return data.rows[0];
   } catch (err) {
-    throw `In db.js: obj.deleteCard: ${err.message}`; 
+    throw `In db.js: obj.deleteCard: ${err.message}`;
   }
-
-}
+};
 
 obj.addUser = async (args) => {
   try {
@@ -133,7 +131,7 @@ obj.addUser = async (args) => {
 
 obj.getUser = async (sub) => {
   try {
-    const sql = `SELECT * 
+    const sql = `SELECT *
     FROM GoogleUserInfo
     WHERE GoogleUserInfo.sub=$1`;
     const data = await pool.query(sql, [sub]);
@@ -149,5 +147,54 @@ obj.getUser = async (sub) => {
     console.log('crash in db.getUser');
   }
 };
+
+obj.createCollection = async (args) => {
+  try {
+    const currentTime = new Date();
+    const formattedTime = currentTime
+      .toISOString()
+      .slice(0, 19)
+      .replace('T', ' ');
+  
+    const arr = [
+      args['user_id'],
+      args['title'],
+    ];
+
+    const sql = `INSERT INTO Collections
+    (user_id, title)
+    VALUES ($1, $2)
+    RETURNING *;`;
+
+    const data = await pool.query(sql, arr);
+    return data.rows[0];
+  } catch (err) {
+    throw `In db.js:obj.createCollection': ${err}`;
+  }
+};
+
+obj.readUserCollections = async (user_id) => {
+  try {
+    const sql = `SELECT *
+    from Collections
+    WHERE user_id=$1;`;
+    const data = await pool.query(sql, [user_id]);
+    return data.rows;
+  } catch (err) {
+    throw `In db:js:obj.readUserCollections: ${err.message}`;
+  }
+};
+
+obj.readCollectionCards = async (collection_id) => {
+  try {
+    const sql = `SELECT *
+    from Cards
+    WHERE collection_id=$1;`;
+    const data = await pool.query(sql, [collection_id]);
+    return data.rows;
+  } catch (err) {
+    throw `In db:js:obj.readCollectionCards: ${err.message}`;
+  }
+}
 
 module.exports = obj;
