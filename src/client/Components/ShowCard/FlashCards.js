@@ -53,15 +53,6 @@ const FlashCard = () => {
     });
   }, []);
 
-  const updateCard = () => {
-    const response = axios({
-      method: 'put',
-      withCredentials: true,
-      url: `http://localhost:8080/api/cards/${id}`,
-    }).then((res) => {
-      window.location.href = `/library`;
-    });
-  };
 
   const deleteCard = () => {
     const response = axios({
@@ -107,7 +98,7 @@ const FlashCard = () => {
               DELETE CARD
             </button>
             <button
-              onClick={() => updateCard()}
+              onClick={() => (window.location.href = `/updateCard/${id}`)}
               className={`${styles.addCardBtn}`}
             >
               UPDATE CARD

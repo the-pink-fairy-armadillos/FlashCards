@@ -126,10 +126,10 @@ router.post('/cards', async (req, res, next) => {
 
 router.put('/cards/:id', async (req, res, next) => {
   try {
-
+    console.log(req.body)
     const { _id, user_id, title, front, back, difficulty, hints, scheduled } = req.body; 
-    const data = { _id, user_id, title, front, back, difficulty, hints, scheduled }; 
-    
+    const data = { _id, user_id, title, front, back, difficulty, hints, scheduled };
+     
     const row = await db.updateCard(data); 
     res.status(200).json(row); 
     console.log('updated sucessfully') 
