@@ -1,13 +1,18 @@
+import './styles.scss';
+import './index.css';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import Home from './Components/Home/Home';
+import { useDispatch, useSelector } from 'react-redux';
+
 import CreateCard from './Components/CreateCard/CreateCard';
-import Navbar from './Components/Navbar/Navbar';
 import FlashCard from './Components/ShowCard/FlashCards';
+import Home from './Components/Home/Home';
 import LandingPage from './Components/LandingPage/LandingPage';
-import { useSelector, useDispatch } from 'react-redux';
-import { setEmail } from './Redux/slices/userSlice';
+import Navbar from './Components/Navbar/Navbar';
 import axios from 'axios';
+import { setEmail } from './Redux/slices/userSlice';
+
 const App = () => {
   const leftItems = {
     home: '/library',
