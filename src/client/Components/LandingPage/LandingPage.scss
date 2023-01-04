@@ -13,15 +13,16 @@
     margin: 1em;
     width: 90%;
     min-height: 500px;
+
     .text-container {
       font-size: 2em;
       margin: 0.5em;
     }
 
     .image-container {
-      // border: 1px solid blue;
       width: 340px;
       height: 225px;
+      margin-top: 3em;
 
       .landing-image {
         object-fit: cover;
