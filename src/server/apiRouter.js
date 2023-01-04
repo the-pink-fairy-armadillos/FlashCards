@@ -67,10 +67,9 @@ router.get('/cards', async (req, res, next) => {
 router.post('/cards', async (req, res, next) => {
   try {
     // sanitize post data
-    const { user_id, title, front, back, difficulty, hints, scheduled } =
+    const { title, front, back, difficulty, hints, scheduled } =
       req.body;
     const data = {
-      user_id,
       title,
       front,
       back,
@@ -94,8 +93,8 @@ router.post('/cards', async (req, res, next) => {
 router.put('/cards/:id', async (req, res, next) => {
   try {
 
-    const { _id, user_id, title, front, back, difficulty, hints, scheduled } = req.body; 
-    const data = { _id, user_id, title, front, back, difficulty, hints, scheduled }; 
+    const { _id, title, front, back, difficulty, hints, scheduled } = req.body; 
+    const data = { _id, title, front, back, difficulty, hints, scheduled }; 
     
     const row = await db.updateCard(data); 
     res.status(200).json(row); 

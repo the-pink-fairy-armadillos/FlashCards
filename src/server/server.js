@@ -6,6 +6,8 @@ const passport = require('passport');
 const cors = require('cors');
 const dotenv = require('dotenv');
 
+dotenv.config();
+
 const session = require('express-session'); // required for oauth session
 
 const { SESSION_SECRET } = process.env;

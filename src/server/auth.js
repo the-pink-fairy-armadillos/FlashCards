@@ -2,6 +2,8 @@ const dotenv = require('dotenv');
 const passport = require('passport');
 const db = require('../db/db.js');
 
+dotenv.config();
+
 // this function takes an OAuth profile and searches the database for
 // a matching user. If found, the function returns the user info. If
 // not found, the function adds user to the database and returns user
