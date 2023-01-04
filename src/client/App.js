@@ -44,7 +44,6 @@ const App = () => {
               <Route exact path="/createCard" element={<CreateCard />} />
               <Route exact path="/updateCard/:id" element={<UpdateCard />} />
               <Route exact path="/flashcard/:id" element={<FlashCard />} />
-              <route exact path= "/createuser" elsement ={<CreateUser/>} />
             </Routes>
           </div>
         </BrowserRouter>
