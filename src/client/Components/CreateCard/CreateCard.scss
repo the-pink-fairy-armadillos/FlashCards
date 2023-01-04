@@ -1,4 +1,4 @@
-#cardInputs {
+/* #cardInputs {
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -48,4 +48,34 @@
 #addCardBtn span {
   font-weight: bolder;
   font-size: 1.2rem;
+} */
+
+
+.new-card-container {
+  display: flex;
+
+  input {
+    margin-bottom: 15px;
+    padding: 10px 10px;
+    width: 50%;
+    background-color: var(--light-bg);
+    text-align: center;
+  }
+
+  .card-title {
+    margin-top: 100px;
+  }
+
+  // .card-front {}
+
+  // .card-back {}
+
+  .add-card-btn {
+    margin-bottom: 15px;
+    padding: 10px 10px;
+    width: 20%;
+    background-color: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+  }
 }

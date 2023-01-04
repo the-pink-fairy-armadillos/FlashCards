@@ -1,0 +1,43 @@
+/* 
+.backgroundGrey {
+    background-color: #525252;
+    margin: 10px;
+    color: white;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    border-color: white;
+    border-width: 2px;
+    border-style: solid;
+    width:400px;
+    height: 200px;
+}
+
+.title {
+    font-size: 24px;
+    text-decoration: none;
+    
+}
+
+.front {
+    font-size: 18px;
+}
+ */
+
+.flashcard-container {
+    background-color: var(--green-bg);
+    color: var(--primary-color);
+    padding: 0.5em;
+    font-family: 'Roboto', sans-serif;
+    border: 2px solid var(--light-bg);
+    width:350px;
+    height: 100px;
+
+    .flashcard-title {
+        font-size: 24px;
+        text-decoration: none;
+    }
+
+    .flashcard-front {
+        font-size: 18px;
+    }
+}

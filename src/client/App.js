@@ -1,10 +1,13 @@
+import './styles.scss';
+import './index.css';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import React, { useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import Home from './Components/Home/Home';
+import { useDispatch, useSelector } from 'react-redux';
+
 import CreateCard from './Components/CreateCard/CreateCard';
-import Navbar from './Components/Navbar/Navbar';
 import FlashCard from './Components/ShowCard/FlashCards';
+import Home from './Components/Home/Home';
 import LandingPage from './Components/LandingPage/LandingPage';
 import CollectionsDisplay from './Components/CollectionsDisplay/CollectionsDisplay.jsx'
 import { setEmail, setUser_id } from './Redux/slices/userSlice';

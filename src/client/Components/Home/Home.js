@@ -1,9 +1,13 @@
-import axios from 'axios';
+import './Home.scss';
+
 import React, { useEffect, useState } from 'react';
+
 import Card from './Card';
-import { v4 as uuid } from 'uuid';
-import styles from './home.module.css';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { v4 as uuid } from 'uuid';
+
+// import '../../styles.scss';
 
 const Home = () => {
   const [arrCards, setArrCards] = useState([]);
@@ -20,18 +24,19 @@ const Home = () => {
   }, []);
 
   return (
-    <>
-      <div id={styles.createNewCard}>
-        <Link to='/createCard'>
+    <div className="card-holder-container">
+      <Link to="/createCard" style={{ textDecoration: 'none' }}>
+        <div id="create-new-card" className="card-button create-new-card">
           Create New Card <strong>+</strong>
-        </Link>
-      </div>
-      <div id={styles.cardsContainer}>
+        </div>
+      </Link>
+
+      <div id="card-container" className="card-container">
         {arrCards.map((card) => (
           <Card data={card} key={uuid()} />
         ))}
       </div>
-    </>
+    </div>
   );
 };
 
