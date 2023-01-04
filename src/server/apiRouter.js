@@ -35,6 +35,39 @@ router.get('/cards/nextCard/:id', async (req, res, next) => {
   }
 })
 
+router.get('/cards/previousCard/:id', async (req, res, next) => {
+  try {
+
+    console.log('just checking')
+
+    const _id = req.params.id;
+    const row = await db.readAllCards();
+    const ids = row.map(element => {
+      return element._id; 
+    })
+
+    console.log('ids', ids)
+
+    let idx = ids.findIndex((element) => {
+      return element === Number(_id);  
+    }); 
+
+    console.log('idx', idx)
+
+    const newIdx = (idx - 1 + ids.length) % ids.length; 
+
+    console.log('newIdx', newIdx)
+
+    res.status(200).json(row[newIdx]._id);
+  } catch (err) {
+    next({
+      log: 'error getting cards',
+      status: 500,
+      message: { err: err },
+    });
+  }
+})
+
 router.get('/cards/:id', async (req, res, next) => {
   try {
     const _id = req.params.id;
