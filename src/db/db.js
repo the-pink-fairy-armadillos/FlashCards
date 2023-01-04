@@ -41,7 +41,6 @@ obj.createCard = async (args) => {
 
     // parameterize sql arguments to prevent attacks
     const arr = [
-      Number(args['user_id']),
       args['title'],
       args['front'],
       args['back'],
@@ -51,8 +50,8 @@ obj.createCard = async (args) => {
     ];
 
     const sql = `INSERT INTO Cards
-    (user_id, title, front, back, difficulty, hints, scheduled)
-    VALUES ($1, $2, $3, $4, $5, $6, $7)
+    (title, front, back, difficulty, hints, scheduled)
+    VALUES ($1, $2, $3, $4, $5, $6)
     RETURNING *;`;
     // execute sql command
     const data = await pool.query(sql, arr);
@@ -74,7 +73,6 @@ obj.updateCard = async (args) => {
 
     const arr = [
       Number(args['_id']),
-      args['user_id'] === undefined ? data1.rows[0].user_id : args['user_id'],
       args['title'] === undefined ? data1.rows[0].title : args['title'],
       args['front'] === undefined ? data1.rows[0].front : args['front'],
       args['back'] === undefined ? data1.rows[0].back : args['back'],
@@ -84,13 +82,12 @@ obj.updateCard = async (args) => {
     ];
 
     const updateUserSQL = ` UPDATE Cards
-    SET title = $3,
-    user_id = $2, 
-    front = $4,
-    back = $5,
-    difficulty = $6,
-    hints = $7,
-    scheduled = $8
+    SET title = $2,
+    front = $3,
+    back = $4,
+    difficulty = $5,
+    hints = $6,
+    scheduled = $7
     WHERE _id = $1`;
 
     const data2 = await pool.query(updateUserSQL, arr);
