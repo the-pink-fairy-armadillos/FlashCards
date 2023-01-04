@@ -1,0 +1,40 @@
+/* #createNewCard {
+  background-color: #8fa582;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  width: 10%;
+  text-align: center;
+  margin: auto;
+  padding: 8px;
+  margin-bottom: 15px;
+}
+
+#createNewCard a {
+  color: white;
+}
+
+#cardsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+} */
+
+.card-holder-container {
+  margin: 1em;
+  .create-new-card {
+    width: 60%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 1.5em;
+  }
+
+  .card-container {
+    // margin: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+  }
+}
+

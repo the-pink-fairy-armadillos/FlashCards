@@ -1,10 +1,12 @@
-import axios from 'axios';
+import './FlashCards.scss';
+
 import React, { useState } from 'react';
-import styles from './flashCard.module.css';
-import { useEffect } from 'react';
-import { v4 as uuid } from 'uuid';
 import { json, useParams } from 'react-router-dom';
+
+import axios from 'axios';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { v4 as uuid } from 'uuid';
 
 const FlashCard = () => {
   const { id } = useParams();
@@ -50,42 +52,36 @@ const FlashCard = () => {
   };
 
   return (
-    <>
-      <div className='container d-flex justify-content-center text-center'>
-        <div className='col'>
-          <div id='card-title-wrapper' className={`${styles.containerbox}`}>
-            <h1 className={`${styles.title}`}>
-              {cardData.title ?? ' No Title'}
-            </h1>
-          </div>
-
-          <div
-            id='card-frontCard'
-            onClick={() => setShowFront(!showFront)}
-            className={`${styles.containerbox2}`}
-          >
-            <p className={`${styles.paragraph}`}>
-              {showFront ? cardData.front : cardData.back}
-            </p>
-          </div>
-
-          <div className={styles.spaceBetween}>
-            <button
-              onClick={() => deleteCard()}
-              className={`${styles.addCardBtn}`}
-            >
-              DELETE CARD
-            </button>
-            <button
-              onClick={() => (window.location.href = `/flashcard/${nextCard}`)}
-              className={`${styles.addCardBtn}`}
-            >
-              NEXT CARD
-            </button>
-          </div>
-        </div>
+    <div className="card-container">
+      <div id="card-title-wrapper" className="card-title-wrapper">
+        <h1 className="">{cardData.title ?? 'No Title'}</h1>
       </div>
-    </>
+
+      <div
+        id="card-frontCard"
+        onClick={() => setShowFront(!showFront)}
+        className="card-main-container"
+      >
+        <p className="card-text">
+          {showFront ? cardData.front : cardData.back}
+        </p>
+      </div>
+
+      <div className="button-container">
+        <button
+          onClick={() => deleteCard()}
+          className="card-button delete-card-btn"
+        >
+          DELETE CARD
+        </button>
+        <button
+          onClick={() => (window.location.href = `/flashcard/${nextCard}`)}
+          className="card-button next-card-btn"
+        >
+          NEXT CARD
+        </button>
+      </div>
+    </div>
   );
 };
 
