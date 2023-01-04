@@ -150,4 +150,53 @@ obj.getUser = async (sub) => {
   }
 };
 
+obj.createCollection = async (args) => {
+  try {
+    const currentTime = new Date();
+    const formattedTime = currentTime
+      .toISOString()
+      .slice(0, 19)
+      .replace('T', ' ');
+  
+    const arr = [
+      args['user_id'],
+      args['title'],
+    ];
+
+    const sql = `INSERT INTO Collections
+    (user_id, title)
+    VALUES ($1, $2)
+    RETURNING *;`;
+
+    const data = await pool.query(sql, arr);
+    return data.rows[0];
+  } catch (err) {
+    throw `In db.js:obj.createCollection': ${err}`;
+  }
+};
+
+obj.readUserCollections = async (user_id) => {
+  try {
+    const sql = `SELECT *
+    from Collections
+    WHERE user_id=$1;`;
+    const data = await pool.query(sql, [user_id]);
+    return data.rows;
+  } catch (err) {
+    throw `In db:js:obj.readUserCollections: ${err.message}`;
+  }
+};
+
+obj.readCollectionCards = async (collection_id) => {
+  try {
+    const sql = `SELECT *
+    from Cards
+    WHERE collection_id=$1;`;
+    const data = await pool.query(sql, [collection_id]);
+    return data.rows;
+  } catch (err) {
+    throw `In db:js:obj.readCollectionCards: ${err.message}`;
+  }
+}
+
 module.exports = obj;
