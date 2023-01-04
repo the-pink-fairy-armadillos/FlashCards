@@ -1,4 +1,4 @@
-const { GOOGLE_CLIENT_ID, GOOGLE_CLIENT_SECRET } = require('../../secrets.js');
+const dotenv = require('dotenv');
 const passport = require('passport');
 const db = require('../db/db.js');
 
@@ -28,8 +28,8 @@ const cb = async (request, accessToken, refreshToken, profile, done) => {
 const GoogleStrategy = require('passport-google-oauth2').Strategy;
 const strategy = new GoogleStrategy(
   {
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: 'http://localhost:8080/auth/google/callback',
     passReqToCallback: true,
   },
