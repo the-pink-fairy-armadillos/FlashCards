@@ -20,6 +20,6 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setEmail } = userSlice.actions;
+export const { setEmail, setUser_id } = userSlice.actions;
 
 export default userSlice.reducer;

@@ -129,4 +129,51 @@ router.delete('/cards/:id', async (req, res, next) => {
   }
 })
 
+router.post('/collections/create', async (req, res, next) => {
+  try {
+    const { user_id, title } = req.body;
+    const data = { user_id, title };
+    const row = await db.createCollection(data);
+    res.status(200).json(row);
+    console.log('created collection successfully');
+    return next();
+  } catch(err) {
+    next({
+      log: 'error creating collection',
+      status: 500,
+      message: { err: err },
+    })
+  }
+});
+
+router.post('/collections', async (req, res, next) => {
+  try {
+    const { user_id } = req.body;
+    const row = await db.readUserCollections(user_id);
+    res.status(200).json(row);
+    console.log('read collections successfully');
+  } catch(err) {
+    next({
+      log: 'error getting collections',
+      status: 500,
+      message: { err, err },
+    })
+  }
+})
+
+router.post('/collections/cards', async (req, res, next) => {
+  try {
+    const { collection_id } = req.body;
+    const row = await db.readCollectionCards(collection_id);
+    res.status(200).json(row);
+    console.log('read collection cards successfully');
+  } catch(err) {
+    next({
+      log: 'error getting cards from collection',
+      status: 500,
+      message: { err, err },
+    });
+  }
+})
+
 module.exports = router;
