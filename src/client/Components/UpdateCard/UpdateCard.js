@@ -37,6 +37,11 @@ const UpdateCard = (props) => {
   }
 
   const modalStyles = {
+    position: 'fixed',
+    top: '50%',
+    left: '50%',
+    marginTop: '-250px',
+    marginLeft: '-250px',
     backgroundColor: 'white',
     width: '500px',
     height: '500px',
@@ -64,6 +69,7 @@ const UpdateCard = (props) => {
         ></input>
         <button id={styles.addCardBtn} onClick={() => {
           cb();
+          props.close();
           }}>
           Update Card <span>&#43;</span>
         </button>

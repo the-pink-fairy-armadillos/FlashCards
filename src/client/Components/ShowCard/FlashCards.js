@@ -111,7 +111,7 @@ const FlashCard = () => {
               DELETE CARD
             </button>
             <Popup trigger={<button className={` ${styles.addCardBtn}`} modal > UPDATE CARD </button>} position="top center">
-              <UpdateCard update={update}></UpdateCard>
+              {close => (<UpdateCard update={update} close={close}></UpdateCard>)}
             </Popup>
             {/* <button
               onClick={() => (window.location.href = `/updateCard/${id}`)}
