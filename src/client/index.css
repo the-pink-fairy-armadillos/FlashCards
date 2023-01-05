@@ -1,6 +1,7 @@
 :root {
-    --font-base: 'Fredericka the Great', cursive;
-
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Fredericka the Great', cursive;
+    
     --primary-color: #D9D9D9;
     --secondary-color: #8FA582;
     --black-color: #030303;
