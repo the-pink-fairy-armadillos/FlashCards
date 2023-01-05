@@ -1,6 +1,5 @@
 .landing-container {
   min-width: 350px;
-  width: 375px;
   
   display: flex;
   flex-direction: column;
@@ -9,10 +8,10 @@
   align-items: center;
 
   .text-image-container {
-    // border: 1px solid peachpuff;
     margin: 1em;
     width: 90%;
-    min-height: 500px;
+    height: 500px;
+    border: 1px solid peachpuff;
 
     .text-container {
       font-size: 2em;
@@ -22,7 +21,7 @@
     .image-container {
       width: 340px;
       height: 225px;
-      margin-top: 3em;
+      margin: 3em auto;
 
       .landing-image {
         object-fit: cover;
@@ -32,8 +31,16 @@
     }
   }
 
-  .login-button {
-    justify-content: baseline;
-    align-items: center;
+}
+
+@media screen and (min-width: 425px) {
+  .text-image-container {
+    width: 100%;
+    min-height: 600px;
+
+    
+    .image-container {
+      margin: auto;
+    }
   }
 }
