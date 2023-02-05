@@ -6,10 +6,10 @@
   margin-bottom: 50px;
 }
 .row {
-  display: flex ;
-  flex-direction: row;  
+  display: flex;
+  flex-direction: row;
   align-content: center;
-  justify-content: space-around;  
+  justify-content: space-around;
 }
 
 #LandingPageLogin {
@@ -22,18 +22,19 @@
 #divContainer {
   display: flex;
   flex-direction: column;
+  height: 100vh;
   /* justify-content: space-around; */
 }
 
 #divContainer div {
-  flex:1;
+  flex: 1;
 }
 
 #landingImage {
   width: 100%;
   height: auto;
+  margin-bottom: 50%;
   /* position: absolute; */
   /* left: 50px; */
   /* bottom: 0px; */
 }
-
