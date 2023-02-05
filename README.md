@@ -1,6 +1,7 @@
 Flash-Cards is a studying app that allows users to custom make flashcards according to their needs. They can create specific sets for whatever topic they want to study and decide what questions and answers to put in them. Future idea may be to incorporate an api that allows users to pick topics and have flash cards populated for them based on that topic. 
 
-![image](https://user-images.githubusercontent.com/111662444/216798007-6a9302a1-a758-4c3a-b268-964a3232ec5d.png)
+![Screenshot_20230204_211344](https://user-images.githubusercontent.com/111662444/216798056-e6c4ccab-0bb9-4670-8cf7-d1dc1523ad59.png)
+
 
 
 # Instructions
