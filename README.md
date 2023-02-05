@@ -4,6 +4,34 @@ In a world full of studying tools sometimes it's difficult to be able to learn a
 
 Future idea may be to incorporate an api that allows users to pick topics and have flash cards populated for them based on that topic. 
 
+# Installation
+
+MacOS (Install dependencies)
+
+```bash
+% npm install
+```
+
+WindowsOS (Install dependencies)
+
+```bash
+$ npm install
+```
+
+# Usage
+
+MacOS (Run dev server)
+
+```bash
+% npm run dev
+```
+
+WindowsOS (Run dev server)
+
+```bash
+$ npm run dev
+```
+
 ![Screenshot_20230204_211344](https://user-images.githubusercontent.com/111662444/216798056-e6c4ccab-0bb9-4670-8cf7-d1dc1523ad59.png)
 
 
