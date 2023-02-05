@@ -22,14 +22,18 @@ $ npm install
 
 MacOS (Run dev server)
 
+(Split Terminals)
 ```bash
-% npm run dev
+% npm run frontend
+% npm run backend
 ```
 
 WindowsOS (Run dev server)
 
+(Split Terminals)
 ```bash
-$ npm run dev
+% npm run frontend
+% npm run backend
 ```
 
 ![Screenshot_20230204_211344](https://user-images.githubusercontent.com/111662444/216798056-e6c4ccab-0bb9-4670-8cf7-d1dc1523ad59.png)
