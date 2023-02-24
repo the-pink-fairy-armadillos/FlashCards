@@ -16,19 +16,19 @@ const Navbar = ({ leftItems }) => {
     <>
       {email && (
         <div className={styles.row}>
-          <div className={`${styles.row}`}>
+          <div className="nav-link-top">
             {Object.entries(leftItems).map((e) => {
               const [title, url] = e;
               return (
                 <div className={styles.margin} key={uuid()}>
-                  <Link to={url}>{title}</Link>
+                  <Link to='/library'>Alinea</Link>
                 </div>
               );
             })}
           </div>
 
           <div className={styles.row}>
-            <div className={styles.margin}>
+            <div className="nav-link-top">
               {email ? (
                 <a href='http://localhost:8080/auth/logout'>logout</a>
               ) : (

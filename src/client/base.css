@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Walter+Turncoat&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 10rem 5rem;
+  background-image: linear-gradient(to top, #d299c2 0%, #fef9d7 100%) !important;
+  font-family: 'Walter Turncoat', cursive;
+}
+.login-btn {
+  width: 200px !important;
+  height: 200px !important;
+  border-radius: 50% !important;
+  text-align: center;
+  line-height: 195px;
+  background: rgba(255,255,255, .35);
+  font-size: 2.2rem;
+  color:#BF595D !important;
+  padding: 0;
+  transition: all .25s ease-in-out;
+  cursor: pointer;
+  border: 5px solid #BF595D;
+  transition: all .2s ease;
+}
+a {
+  text-decoration: none !important;
+}
+.login-btn:hover {
+  color: rgb(255,128,128) !important;
+  border-color: rgb(255,128,128)
+}
+
+.btn {
+  color: #BF595D;
+  border: 1px solid #BF595D;
+  font-size: 13px;
+  text-shadow: 1px 2px 3px rgba(18,8,5,0.25);
+  padding: 15px 15px;
+  border-radius: 4px;
+  background: rgba(255,255,255, .35);
+  transition: all .2s ease;
+}
+.btn-inverse {
+  color: rgba(255,255,255, .85);
+  background:  #BF595D;
+  border-color: #BF595D;
+}
+.btn:hover {
+  background-color: #BF595D;
+  color: #fff;
+}
+.btn.start-btn {
+  padding: 0 !important;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: center !important;
+  font-size: 13px;
+}
+.btn.btn-small {
+  padding: 13px 16px;
+}
+.btn.large-btn {
+  padding: 30px 50px;
+  font-size: 22px;
+  border: 2px solid #BF595D;
+  margin-bottom: 40px;
+}
+.filter-btn {
+  margin-right: 20px;
+}
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.filter-container h2 {
+  margin-bottom: 20px;
+  font-size: 48px;
+  color: #BF595D;
+  text-shadow: 1px 2px 3px rgba(18,8,5,0.25);
+}
+.btn.btn-wide {
+  padding: 25px 0;
+  width: 500px;
+  font-size: 22px;
+}
+
+.card-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0, .65);
+}
+.card-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 1000px;
+  position: fixed;
+  padding: 50px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 1000;
+  background-color: rgba(255,255,255, .85);
+  border: 5px solid #BF595D;
+  border-radius: 10px;
+}
+.card-form input {
+  width: 250px;
+  padding: 15px 5px 15px 10px;
+  margin-bottom: 15px;
+  border: 1px solid #BF595D;
+  border-radius: 8px;
+  font-size: 12px;
+  background-color: rgba(255,255,255, .85) !important;
+  outline: none;
+}
+.card-form input:focus {
+  outline: none;
+  box-shadow: inset 1px 1px 3px 1px rgba(0,0,0,0.25) 
+}
+
+.main-card {
+  width: 1200px;
+  background-color: rgba(255,255,255, .65) !important;
+  border-radius: 6px;
+  margin: 0;
+  border: 2px solid #BF595D;
+  border-bottom: none;
+  margin-left: -50px;
+}
+.card-title {
+  margin: 0;
+  padding: 10px 0;
+  margin-top: 40px;
+}
+.card-text {
+  color: #333;
+  font-size:30px;
+}
+.card-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:36px;
+  margin: 0;
+  height: 500px;
+  width: 1200px;
+  background-color: rgba(255,255,255, .65) !important;
+  border-radius: 6px;
+  border: 2px solid #BF595D;
+  border-top: none;
+  margin-left: -50px;
+}
+.card-btn {
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.correct-btn {
+  margin-top: 30px;
+}
+.nav-link-top a {
+  color: #BF595D;
+  font-family: 'Walter Turncoat', cursive;
+  padding: 15px 30px;
+  background: rgba(255,255,255,.25)
+}
